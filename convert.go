@@ -62,7 +62,7 @@ var (
 	}
 )
 
-// ConvertIntToString function for convert number column to string
+// ConvertIntToString function for convert from number column to string (excel)
 func ConvertIntToString(in int) string {
 	var result string
 
@@ -85,6 +85,7 @@ func ConvertIntToString(in int) string {
 	return result
 }
 
-func convertStringToInt(in string) int64 {
+// ConvertStringToInt function for convert from string column name (excel) to number
+func ConvertStringToInt(in string) int {
 	return 1
 }

@@ -1017,7 +1017,16 @@ func TestConvertIntToString(t *testing.T) {
 	for _, tv := range testValues {
 		v := ConvertIntToString(tv.ColumnNumber)
 		if tv.ColumnName != v {
-			t.Error("Expected "+tv.ColumnName+", got ", v)
+			t.Error("Expected ", tv.ColumnName, ", got ", v)
+		}
+	}
+}
+
+func TestConvertStringToInt(t *testing.T) {
+	for _, tv := range testValues {
+		v := ConvertStringToInt(tv.ColumnName)
+		if tv.ColumnNumber != v {
+			t.Error("Expected ", tv.ColumnNumber, ", got ", v)
 		}
 	}
 
