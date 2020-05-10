@@ -1,5 +1,9 @@
 package iterator
 
+import (
+	"math"
+)
+
 const lenAlphabet = 25
 
 var (
@@ -63,11 +67,9 @@ var (
 )
 
 // ConvertIntToString function for convert from number column to string (excel)
-func ConvertIntToString(in int) string {
-	var result string
-
+func ConvertIntToString(in int) (result string) {
 	if in < 1 {
-		return result
+		return
 	}
 
 	num := in - 1
@@ -82,10 +84,15 @@ func ConvertIntToString(in int) string {
 		}
 	}
 
-	return result
+	return
 }
 
 // ConvertStringToInt function for convert from string column name (excel) to number
-func ConvertStringToInt(in string) int {
-	return 1
+func ConvertStringToInt(in string) (result int) {
+	inLen := len(in) - 1
+	for i := 0; i <= inLen; i++ {
+		result += int(math.Pow(lenAlphabet+1, float64(i))) * (convertMapStringToInt[string(in[inLen-i])] + 1)
+	}
+
+	return
 }
