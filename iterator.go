@@ -27,6 +27,7 @@ func (a *Alphabet) Next() bool {
 	return a.currentIndex < a.countColumn
 }
 
+// GetAddress get current column name + row
 func (a *Alphabet) GetAddress() (int, string) {
 	return a.currentIndex, ConvertIntToString(a.startColumn+a.currentIndex) + strconv.Itoa(a.row)
 }
