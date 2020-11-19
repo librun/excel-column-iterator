@@ -1,3 +1,3 @@
-module github.com/ne-ray/excel-column-iterator
+module github.com/librun/excel-column-iterator
 
 go 1.13
